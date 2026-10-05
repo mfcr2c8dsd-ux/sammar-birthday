@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sammar 🎂</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: white;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #7c3aed,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #090014,
+            #17002b,
+            #240046
+        );
+}
+
+
+/* ⭐ STARS */
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+    background: white;
+
+    animation:
+        twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+
+    from {
+        opacity: .2;
+    }
+
+    to {
+        opacity: 1;
+
+        box-shadow:
+            0 0 12px white;
+    }
+}
+
+
+/* MAIN CARD */
+
+.container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 92%;
+    max-width: 700px;
+
+    margin: auto;
+
+    padding:
+        60px 0;
+}
+
+
+.card {
+
+    padding:
+        40px 25px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+
+        0 30px 100px
+        rgba(0,0,0,.5),
+
+        inset 0 0 30px
+        rgba(255,255,255,.05);
+
+    animation:
+        appear 1.2s ease;
+}
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* CAKE */
+
+.cake {
+
+    font-size: 85px;
+
+    animation:
+        float 3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px);
+    }
+}
+
+
+/* TEXT */
+
+.small {
+
+    color:
+        #d8b4fe;
+
+    font-size:
+        16px;
+
+    letter-spacing:
+        4px;
+
+    margin-top:
+        15px;
+}
+
+h1 {
+
+    margin:
+        10px 0;
+
+    font-size:
+        clamp(50px, 12vw, 85px);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffd166,
+            #ff70a6,
+            #c77dff,
+            #7bdff2
+        );
+
+    -webkit-background-clip:
+        text;
+
+    color:
+        transparent;
+
+    animation:
+        glow 2s
+        infinite alternate;
+}
+
+@keyframes glow {
+
+    from {
+        filter:
+            drop-shadow(
+                0 0 5px
+                #ff70a6
+            );
+    }
+
+    to {
+        filter:
+            drop-shadow(
+                0 0 25px
+                #c77dff
+            );
+    }
+}
+
+.subtitle {
+
+    font-size:
+        22px;
+
+    color:
+        #f5eaff;
+}
+
+.message {
+
+    max-width:
+        570px;
+
+    margin:
+        30px auto;
+
+    line-height:
+        1.8;
+
+    font-size:
+        17px;
+
+    color:
+        #eeeeee;
+}
+
+
+/* BUTTON */
+
+button {
+
+    padding:
+        16px 32px;
+
+    border:
+        none;
+
+    border-radius:
+        50px;
+
+    font-size:
+        17px;
+
+    font-weight:
+        bold;
+
+    color:
+        #250046;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd166,
+            #ff9f1c
+        );
+
+    cursor:
+        pointer;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(255,159,28,.35);
+
+    transition:
+        .3s;
+}
+
+button:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(255,159,28,.6);
+}
+
+
+/* LETTER */
+
+#letter {
+
+    margin-top:
+        30px;
+
+    padding:
+        25px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    line-height:
+        1.8;
+
+    animation:
+        reveal 1s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes reveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* HEART */
+
+.heart {
+
+    color:
+        #ff4d8d;
+
+    display:
+        inline-block;
+
+    animation:
+        heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+
+    50% {
+        transform:
+            scale(1.4);
+    }
+}
+
+
+/* CONFETTI */
+
+.confetti {
+
+    position:
+        fixed;
+
+    top:
+        -20px;
+
+    width:
+        10px;
+
+    height:
+        14px;
+
+    z-index:
+        20;
+
+    animation:
+        fall linear forwards;
+}
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+
+/* FOOTER */
+
+.footer {
+
+    margin-top:
+        30px;
+
+    color:
+        #a78bfa;
+
+    font-size:
+        13px;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div id="stars"></div>
+
+
+<div class="container">
+
+
+<div class="card">
+
+
+<div class="cake">
+🎂
+</div>
+
+
+<div class="small">
+A LITTLE SURPRISE FOR
+</div>
+
+
+<h1>
+SAMMAR
+</h1>
+
+
+<div class="subtitle">
+
+✨ Happy Birthday! ✨
+
+</div>
+
+
+<div class="message">
+
+<p>
+Today isn't just another day.
+</p>
+
+<p>
+It's the day the world became
+a little brighter because
+<strong>you</strong> arrived in it. 🌎✨
+</p>
+
+<p>
+May this new chapter bring you
+beautiful memories, unexpected adventures,
+big dreams, genuine happiness,
+and countless reasons to smile.
+</p>
+
+<p>
+You deserve an amazing year ahead. 💜
+</p>
+
+</div>
+
+
+<button onclick="celebrate()">
+
+🎁 Open Your Surprise
+
+</button>
+
+
+<div id="letter" class="hidden">
+
+
+<div style="font-size:50px;">
+💌
+</div>
+
+
+<p>
+<strong>Dear Sammar,</strong>
+</p>
+
+
+<p>
+
+I hope you know how special you are
+to the people lucky enough to call you
+a friend.
+
+</p>
+
+
+<p>
+
+May you laugh a little louder,
+dream a little bigger,
+and make memories you'll still be
+talking about years from now.
+
+</p>
+
+
+<p>
+
+Whatever this new year of your life brings,
+I hope it brings you closer to everything
+you've been wishing for.
+
+</p>
+
+
+<p>
+
+Keep being you.
+
+That's already pretty amazing.
+
+</p>
+
+
+<p>
+
+<strong>
+Happy Birthday, Sammar! 🎂🎉
+</strong>
+
+</p>
+
+
+<p style="font-size:35px;">
+
+<span class="heart">
+♥
+</span>
+
+</p>
+
+
+</div>
+
+
+<div class="footer">
+
+Made with friendship,
+good wishes & a little magic ✨
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script>
+
+
+/* CREATE STARS */
+
+const stars =
+document.getElementById("stars");
+
+
+for (
+    let i = 0;
+    i < 120;
+    i++
+) {
+
+    const star =
+        document.createElement("div");
+
+    star.className =
+        "star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    stars.appendChild(star);
+}
+
+
+/* BIRTHDAY CELEBRATION */
+
+function celebrate() {
+
+
+    document
+        .getElementById("letter")
+        .classList
+        .remove("hidden");
+
+
+    const colors = [
+
+        "#ffd166",
+        "#ff70a6",
+        "#c77dff",
+        "#7bdff2",
+        "#ffffff",
+        "#ff9f1c"
+
+    ];
+
+
+    /* CONFETTI */
+
+    for (
+        let i = 0;
+        i < 180;
+        i++
+    ) {
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random()
+                    *
+                    colors.length
+                )
+            ];
+
+
+        piece.style.animationDuration =
+            (
+                2 +
+                Math.random() * 4
+            ) + "s";
+
+
+        piece.style.animationDelay =
+            Math.random() + "s";
+
+
+        document.body
+            .appendChild(piece);
+
+
+        setTimeout(
+            () => piece.remove(),
+            7000
+        );
+
+    }
+
+
+    /* FIREWORKS */
+
+    for (
+        let i = 0;
+        i < 40;
+        i++
+    ) {
+
+        const firework =
+            document.createElement("div");
+
+
+        firework.innerHTML =
+            "✨";
+
+
+        firework.style.position =
+            "fixed";
+
+
+        firework.style.left =
+            Math.random() * 100 + "vw";
+
+
+        firework.style.top =
+            Math.random() * 75 + "vh";
+
+
+        firework.style.fontSize =
+            (
+                15 +
+                Math.random() * 35
+            ) + "px";
+
+
+        firework.style.zIndex =
+            "30";
+
+
+        firework.style.pointerEvents =
+            "none";
+
+
+        document.body
+            .appendChild(firework);
+
+
+        setTimeout(
+            () => firework.remove(),
+            2500
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
